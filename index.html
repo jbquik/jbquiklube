@@ -2365,88 +2365,91 @@ Not an official Manus doc nor endorsed by Manus. Content may contain inaccuracie
 </script>
 <script>
 (() => {
-  const TOGGLE_SEL =
-    '[data-nav-toggle], .menu-toggle, .hamburger, [aria-controls*="nav"]';
+  const MAILTO =
+    'mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A';
+  const EMAIL = 'jack@jbquiklube.com';
 
-  // Find the menu associated to a clicked toggle
-  function getMenu(btn) {
-    const id = btn.getAttribute('aria-controls');
-    if (id && document.getElementById(id)) return document.getElementById(id);
-    // fallbacks near the button, then site-wide
-    return (
-      btn.closest('header, nav, .site-header')?.querySelector(
-        '[data-nav], nav, .mobile-nav, .site-nav'
-      ) || document.querySelector('[data-nav], nav, .mobile-nav, .site-nav')
-    );
+  function patchEmailButtons() {
+    let changed = false;
+    const targets = [/email us with your questions/i, /^contact us$/i];
+
+    document.querySelectorAll('button, a').forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (!targets.some(rx => rx.test(txt))) return;
+
+      if (el.tagName === 'A') {
+        if (!el.href || !el.href.startsWith('mailto:')) el.href = MAILTO;
+      } else {
+        const a = document.createElement('a');
+        a.href = MAILTO;
+        a.className = el.className;
+        a.innerHTML = el.innerHTML; // keep icon + text
+        a.setAttribute('role','button');
+        el.replaceWith(a);
+      }
+      changed = true;
+    });
+    return changed;
   }
 
-  function setOpen(btn, menu, open) {
-    menu.classList.toggle('is-open', open);
-    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    document.documentElement.classList.toggle('nav-open', open);
-  }
+  // Turn any footer/plain text "jack@jbquiklube.com" into a mailto link
+  function patchFooterEmail() {
+    const root = document.querySelector('footer') || document.body;
+    if (!root) return false;
 
-  // Event delegation: works even if the app re-renders
-  document.addEventListener(
-    'click',
-    (e) => {
-      const btn = e.target.closest(TOGGLE_SEL);
-      if (btn) {
-        const menu = getMenu(btn);
-        if (menu) {
-          e.preventDefault();
-          setOpen(btn, menu, !menu.classList.contains('is-open'));
+    // Find text nodes with the email that are not already inside a link
+    const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, null);
+    const toPatch = [];
+    while (walker.nextNode()) {
+      const n = walker.currentNode;
+      if (!n.nodeValue) continue;
+      if (n.parentElement && n.parentElement.closest('a')) continue;
+      if (n.nodeValue.includes(EMAIL)) toPatch.push(n);
+    }
+
+    toPatch.forEach(n => {
+      const parts = n.nodeValue.split(EMAIL);
+      const frag = document.createDocumentFragment();
+      parts.forEach((p, i) => {
+        if (p) frag.appendChild(document.createTextNode(p));
+        if (i < parts.length - 1) {
+          const a = document.createElement('a');
+          a.href = MAILTO;
+          a.textContent = EMAIL;
+          a.rel = 'nofollow noopener';
+          frag.appendChild(a);
         }
-        return;
-      }
-      // click-away to close
-      const openMenu = document.querySelector(
-        '.is-open[data-nav], nav.is-open, .mobile-nav.is-open, .site-nav.is-open'
-      );
-      if (
-        openMenu &&
-        !e.target.closest(
-          '.is-open[data-nav], nav.is-open, .mobile-nav.is-open, .site-nav.is-open'
-        )
-      ) {
-        const openBtn =
-          document.querySelector(`${TOGGLE_SEL}[aria-expanded="true"]`) ||
-          document.querySelector(TOGGLE_SEL);
-        if (openBtn) setOpen(openBtn, openMenu, false);
-      }
-    },
-    true
-  );
+      });
+      n.parentNode.replaceChild(frag, n);
+    });
 
-  // ESC to close + basic focus trap for accessibility
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const openMenu = document.querySelector(
-        '.is-open[data-nav], nav.is-open, .mobile-nav.is-open, .site-nav.is-open'
-      );
-      if (openMenu) {
-        const btn =
-          document.querySelector(`${TOGGLE_SEL}[aria-expanded="true"]`) ||
-          document.querySelector(TOGGLE_SEL);
-        if (btn) setOpen(btn, openMenu, false);
+    // Also handle elements that are exactly the email (common in footers)
+    root.querySelectorAll('*:not(a)').forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (txt === EMAIL) {
+        const a = document.createElement('a');
+        a.href = MAILTO;
+        a.textContent = EMAIL;
+        el.replaceChildren(a);
       }
-    }
+    });
+
+    return toPatch.length > 0;
+  }
+
+  // SPA safety: run after load and retry briefly for hydrated content
+  function runPatches() {
+    patchEmailButtons();
+    patchFooterEmail();
+  }
+
+  window.addEventListener('load', () => {
+    let tries = 0;
+    const t = setInterval(() => {
+      runPatches();
+      if (++tries >= 20) clearInterval(t);
+    }, 250);
   });
-
-  // minimal CSS helpers injected so you don’t have to rebuild
-  const s = document.createElement('style');
-  s.textContent = `
-    /* lock scroll when menu is open */
-    html.nav-open { overflow: hidden; }
-    /* default hidden; show when toggled */
-    [data-nav] { display: none; }
-    [data-nav].is-open, nav.is-open, .mobile-nav.is-open, .site-nav.is-open { display: block; }
-    @media (min-width: 1025px) {
-      [data-nav] { display: block; } /* desktop layout unaffected */
-      html.nav-open { overflow: auto; }
-    }
-  `;
-  document.head.appendChild(s);
 })();
 </script>
 
