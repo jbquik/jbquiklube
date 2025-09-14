@@ -1,27 +1,3 @@
-/* soften whites */
-:root{
-  --color-white:#f6f7f9;
-  --background:#f6f7f9;
-  --card:#f7f8fb;
-}
-.bg-white,.bg-gray-50,.bg-background,.bg-card{background:var(--color-white)!important;}
-html,body{background:var(--color-white)!important;}
-
-/* remove bullets everywhere (safe for now) */
-ul{list-style:none!important; padding-left:0!important;}
-li::marker{content:"";}
-
-/* Tailwind utilities that can re-add bullets */
-.list-disc,.list-outside,.prose ul{list-style:none!important; padding-left:0!important;}
-
-/* soften white blocks */
-html,body,.bg-white,.bg-background,.bg-card,.prose,.section,main{
-  background:#f6f7f9 !important;
-}
-
-/* remove bullets (covers Tailwind/prose) */
-.prose ul, ul{ list-style:none !important; padding-left:0 !important; }
-.prose li::marker, li::marker{ content:"" !important; }
 
 /* Generic mobile menu behavior */
 @media (max-width: 980px){
