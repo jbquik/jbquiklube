@@ -2452,6 +2452,92 @@ Not an official Manus doc nor endorsed by Manus. Content may contain inaccuracie
   });
 })();
 </script>
+<script>
+(() => {
+  // 1) Make email buttons work (keeps your earlier fix)
+  const MAILTO =
+    'mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A';
+  function patchEmailButtons() {
+    const targets = [/email us with your questions/i, /^contact us$/i];
+    document.querySelectorAll('button, a').forEach(el => {
+      const txt = (el.textContent || '').trim();
+      if (!targets.some(rx => rx.test(txt))) return;
+      if (el.tagName === 'A') {
+        if (!el.href || !el.href.startsWith('mailto:')) el.href = MAILTO;
+      } else {
+        const a = document.createElement('a');
+        a.href = MAILTO;
+        a.className = el.className;
+        a.innerHTML = el.innerHTML;
+        a.setAttribute('role','button');
+        el.replaceWith(a);
+      }
+    });
+  }
+
+  // 2) Universal mobile menu toggle (no framework assumptions)
+  function wireMobileMenu() {
+    // Try to find a toggle button and the nav/container it should open
+    const toggle =
+      document.querySelector('[data-menu-toggle], .menu-toggle, button[aria-label*="menu" i], [aria-controls*="nav" i]') ||
+      document.querySelector('header button, header .hamburger, header [role="button"]');
+
+    // Likely nav containers to open/close
+    const nav =
+      document.querySelector('[data-mobile-nav], nav[aria-label*="primary" i], nav[role="navigation"]') ||
+      document.querySelector('header nav, .mobile-nav, #nav, #menu');
+
+    if (!toggle || !nav) return false;
+
+    // Ensure a state attribute exists for CSS to hook into
+    nav.setAttribute('data-open', nav.getAttribute('data-open') || 'false');
+
+    // Click to toggle
+    const clickHandler = (e) => {
+      e.preventDefault();
+      const open = nav.getAttribute('data-open') === 'true';
+      nav.setAttribute('data-open', String(!open));
+      document.documentElement.classList.toggle('menu-open', !open);
+    };
+
+    // Avoid duplicate listeners on re-hydrate
+    toggle.removeEventListener('click', clickHandler);
+    toggle.addEventListener('click', clickHandler);
+
+    // Close when clicking a nav link (good UX)
+    nav.addEventListener('click', (e) => {
+      const a = e.target.closest('a');
+      if (!a) return;
+      nav.setAttribute('data-open','false');
+      document.documentElement.classList.remove('menu-open');
+    });
+
+    // Close on ESC
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        nav.setAttribute('data-open','false');
+        document.documentElement.classList.remove('menu-open');
+      }
+    });
+
+    return true;
+  }
+
+  function init() {
+    patchEmailButtons();
+    wireMobileMenu();
+  }
+
+  // SPA-safe: try a few times after load in case the bundle mounts late
+  window.addEventListener('load', () => {
+    let tries = 0;
+    const t = setInterval(() => {
+      init();
+      if (++tries >= 20) clearInterval(t);
+    }, 250);
+  });
+})();
+</script>
 
 </body>
 </html>
