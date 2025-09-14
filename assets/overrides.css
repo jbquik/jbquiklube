@@ -22,3 +22,15 @@ html,body,.bg-white,.bg-background,.bg-card,.prose,.section,main{
 /* remove bullets (covers Tailwind/prose) */
 .prose ul, ul{ list-style:none !important; padding-left:0 !important; }
 .prose li::marker, li::marker{ content:"" !important; }
+
+/* Generic mobile menu behavior */
+@media (max-width: 980px){
+  [data-mobile-nav], nav[aria-label*="primary" i], nav[role="navigation"], header nav, .mobile-nav, #nav, #menu{
+    display: none;
+  }
+  [data-open="true"]{
+    display: block !important;
+  }
+  /* Optional: lock scroll when menu open */
+  .menu-open { overflow: hidden; }
+}
