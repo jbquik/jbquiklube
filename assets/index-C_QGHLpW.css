@@ -9,6 +9,7 @@ footer img,
 }
 html, body { background: #CBCAC9 !important; }
 /* === LOAD CUSTOM FONTS FROM ROOT ASSETS === */
+/* === MOKITA – works in VS Code Live Server AND live site === */
 @font-face {
     font-family: 'Mokita';
     src: url('fonts/Mokita.otf') format('opentype');
