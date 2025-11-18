@@ -10,15 +10,13 @@ footer img,
 html, body { background: #CBCAC9 !important; }
 /* === LOAD CUSTOM FONTS FROM ROOT ASSETS === */
 /* === MOKITA – works on GitHub Pages AND VS Code Live Server === */
-@font-face {
-    font-family: 'Mokita';
-    font-family: 'Demo Mokita';
-    src: url('fonts/Mokita.otf') format('opentype'),   /* ← for VS Code Live Server */
-         url('/fonts/Mokita.otf') format('opentype');  /* ← for GitHub Pages */
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
-}
+    @font-face {
+        font-family: 'Mokita';
+        src: url('fonts/Mokita.otf') format('opentype');
+        font-weight: normal;
+        font-style: normal;
+        font-display: swap;
+    }
 
 @font-face {
     font-family: 'Taruno Wide Black';
@@ -29,17 +27,10 @@ html, body { background: #CBCAC9 !important; }
 }
 
 /* === MAIN TITLES === */
-h1,
-.title,
-.page-title,
-.entry-title,
-.widget-title,
-.main-title,
-.hero-title,
-.site-title {
-    font-family: 'Demo Mokita', Georgia, serif !important;
-    font-weight: normal !important;
-}
+    h1, .title, .page-title, .entry-title, .widget-title, .main-title, .hero-title, .site-title {
+        font-family: 'Mokita', Georgia, serif !important;
+        font-weight: normal !important;
+    }
 
 /* === SUBTITLES === */
 h2, h3, h4,
