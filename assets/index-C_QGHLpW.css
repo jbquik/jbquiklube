@@ -9,10 +9,11 @@ footer img,
 }
 html, body { background: #CBCAC9 !important; }
 /* === LOAD CUSTOM FONTS FROM ROOT ASSETS === */
-/* === MOKITA – works in VS Code Live Server AND live site === */
+/* === MOKITA – works on GitHub Pages AND VS Code Live Server === */
 @font-face {
     font-family: 'Mokita';
-    src: url('fonts/Mokita.otf') format('opentype');
+    src: url('fonts/Mokita.otf') format('opentype'),   /* ← for VS Code Live Server */
+         url('/fonts/Mokita.otf') format('opentype');  /* ← for GitHub Pages */
     font-weight: normal;
     font-style: normal;
     font-display: swap;
