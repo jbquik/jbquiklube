@@ -94,7 +94,11 @@ Error generating stack: `+e.message+`
  */const jv=[["path",{d:"M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z",key:"cbrjhi"}]],qv=Uu("wrench",jv),bf="/assets/JBQuik_title.png",Cv="/assets/JBQuik_oilchange-banner.webp",Bv="/assets/JBQuik-services.webp",Yv="/assets/JBQuik_drive-thru_square.webp";function Gv(){return R.jsxs("div",{className:"min-h-screen bg-white",children:[R.jsx("header",{className:"bg-white shadow-sm border-b border-gray-200",children:R.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:R.jsxs("div",{className:"flex justify-between items-center py-4",children:[R.jsx("div",{className:"flex items-center",children:R.jsx("img",{src:bf,alt:"J.B. Quik Oil Co.",className:"h-12 w-auto"})}),R.jsxs("nav",{className:"hidden md:flex space-x-8",children:[R.jsx("a",{href:"#home",className:"text-gray-700 hover:text-blue-600 font-medium",children:"Home"}),R.jsx("a",{href:"#services",className:"text-gray-700 hover:text-blue-600 font-medium",children:"Services"}),R.jsx("a",{href:"#about",className:"text-gray-700 hover:text-blue-600 font-medium",children:"About"}),R.jsx("a",{href:"#contact",className:"text-gray-700 hover:text-blue-600 font-medium",children:"Contact"})]})]})})}),R.jsxs("section",{id:"home",className:"relative bg-gradient-to-br from-blue-600 to-blue-800 text-white",children:[R.jsx("div",{className:"absolute inset-0 bg-black opacity-20"}),R.jsxs("div",{className:"relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center",children:[R.jsx("div",{className:"mb-8",children:R.jsx("img",{src:bf,alt:"J.B. Quik Oil Co.",className:"h-32 w-auto mx-auto mb-6"})}),
   R.jsx("h1",{
   className:"text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-8 drop-shadow-lg",
-  style:{ fontFamily: "'Bangers', cursive" },
+  style:{ 
+    fontFamily: "'Bangers', cursive",
+    color: "#FBBF24",           // this forces the bright yellow
+    textShadow: "3px 3px 0 rgba(0,0,0,0.3)"
+  },
   children:"Oil Changes & More"
 }),
     R.jsxs("div",{className:"bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto",children:[
