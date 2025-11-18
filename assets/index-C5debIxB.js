@@ -101,7 +101,7 @@ Error generating stack: `+e.message+`
   },
   children:"Oil Changes & More"
 }),
-    R.jsxs("div",{className:"bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto",children:[
+  R.jsxs("div",{className:"bg-white/10 backdrop-blur-sm rounded-lg p-8 max-w-2xl mx-auto",children:[
   R.jsx("h2",{className:"text-2xl md:text-3xl font-semibold mb-4",children:"Now Open"}),
   R.jsx("p",{className:"text-xl mb-6",children:"New look, new name - Same GREAT service since 1981!"}),
   
