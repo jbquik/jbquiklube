@@ -178,7 +178,8 @@ R.jsx("section",{id:"contact",className:"py-16 bg-blue-600 text-white",children:
 
     // Email button
     R.jsxs(qd,{asChild:!0,className:"bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-10 py-4 rounded-lg shadow-lg",children:
-      R.jsx("a",{href:"mailto:jack@jbquiklube.com",children:[
+      R.jsx("a",{href:"    'mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A';",
+        children:[
         R.jsx(wd,{className:"mr-3 h-6 w-6"}),"Contact Us"
       ]})
     })
