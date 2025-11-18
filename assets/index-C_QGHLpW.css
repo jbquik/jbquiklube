@@ -12,6 +12,7 @@ html, body { background: #CBCAC9 !important; }
 /* === MOKITA – works on GitHub Pages AND VS Code Live Server === */
 @font-face {
     font-family: 'Mokita';
+    font-family: 'Demo Mokita';
     src: url('fonts/Mokita.otf') format('opentype'),   /* ← for VS Code Live Server */
          url('/fonts/Mokita.otf') format('opentype');  /* ← for GitHub Pages */
     font-weight: normal;
@@ -36,7 +37,7 @@ h1,
 .main-title,
 .hero-title,
 .site-title {
-    font-family: 'Mokita', Georgia, serif !important;
+    font-family: 'Demo Mokita', Georgia, serif !important;
     font-weight: normal !important;
 }
 
