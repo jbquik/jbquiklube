@@ -7,7 +7,6 @@
     <title>J.B. Quik Oil Co. - Oil Changes & More</title>
     <script type="module" crossorigin src="assets/index-C5debIxB.js"></script>
     <link rel="stylesheet" crossorigin href="assets/index-C_QGHLpW.css">
-	  <link rel="stylesheet" href="/overrides.css">
   </head>
 	<body>
     <div id="root"></div>
@@ -2296,7 +2295,7 @@ Not an official Manus doc nor endorsed by Manus. Content may contain inaccuracie
 			</style>
 			${e()}`}handleSetDialogRef(e){e instanceof gl&&(this.dialogRef=e)}}customElements.define("lit-textarea",is);customElements.define("lit-popup",hi);customElements.define("lit-dialog",gl);customElements.define("manus-content-root",K2);customElements.define("make-with-manus",M2);customElements.define("footer-watermark",L2);h2();hs(()=>{new MutationObserver(()=>{document.querySelector("manus-content-root")||document.body.appendChild(document.createElement("manus-content-root"))}).observe(document.body,{childList:!0,subtree:!0})});
 
-			};
+			;
 			</script>
 
 <style id="visit-card-css">
@@ -2316,58 +2315,11 @@ Not an official Manus doc nor endorsed by Manus. Content may contain inaccuracie
 #visit-card-wrap h3{ font-size:1.75rem !important; } /* ~24px on md+ */}
 </style>
 
-<script>
-(() => {
-  const CARD_HTML = `
-  <section id="visit-card-wrap">
-    <div class="vc-card">
-      <div class="vc-grid">
-        <div class="vc-left">
-          <a href="https://jackscarwashhb.com" target="_blank" rel="noopener">
-            <img class="vc-logo" src="assets/jcw.webp" alt="Jack's Self Serve Car Wash">
-          </a>
-          <div>
-            <h3 style="margin:0;font:800 20px/1.2 system-ui,-apple-system,Segoe UI,Roboto">Next to Jack's Car Wash!</h3>
-            <p style="margin:2px 0 0">5841 Warner Ave, Huntington Beach, CA 92649</p>
-            <p style="margin:2px 0 0;color:#4b5563">
-              <a href="https://jackscarwashhb.com" target="_blank" style="text-decoration:underline">Next to Jack’s Car Wash</a>
-            </p>
-          </div>
-        </div>
-        <div class="vc-map">
-          <iframe
-            loading="lazy" allowfullscreen
-            referrerpolicy="no-referrer-when-downgrade"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3318.699051499458!2d-118.02822816307447!3d33.7167354499115!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80dd25d3dd6fe447%3A0x970eac103d19215f!2sQuik%20Lube%20%26%20Oil!5e0!3m2!1sen!2sus!4v1757193356729!5m2!1sen!2sus">
-          </iframe>
-        </div>
-      </div>
-    </div>
-  </section>`;
 
-  const findAnchor = () =>
-    [...document.querySelectorAll('h1,h2,h3')]
-      .find(h => /convenient drive-thru service/i.test(h.textContent||''))?.closest('section') || null;
-
-  const insertOnce = () => {
-    const anchor = findAnchor();
-    if (!anchor) return false;
-    document.getElementById('visit-card-wrap')?.remove();
-    anchor.insertAdjacentHTML('afterend', CARD_HTML);
-    return true;
-  };
-
-  // Wait for the SPA to render, then insert (no observers afterward)
-  window.addEventListener('load', () => {
-    let tries = 0;
-    const t = setInterval(() => { if (insertOnce() || ++tries >= 10) clearInterval(t); }, 250);
-  });
-})();
-</script>
 <script>
 (() => {
   const MAILTO =
-    'mailto:jack@jbquiklube.com?subject=Service%20Inquiry%20JB%20Quik';
+    'mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A';
   const EMAIL = 'jack@jbquiklube.com';
 
   function patchEmailButtons() {
@@ -2448,92 +2400,6 @@ Not an official Manus doc nor endorsed by Manus. Content may contain inaccuracie
     let tries = 0;
     const t = setInterval(() => {
       runPatches();
-      if (++tries >= 20) clearInterval(t);
-    }, 250);
-  });
-})();
-</script>
-<script>
-(() => {
-  // 1) Make email buttons work (keeps your earlier fix)
-  const MAILTO =
-    'mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A';
-  function patchEmailButtons() {
-    const targets = [/email us with your questions/i, /^contact us$/i];
-    document.querySelectorAll('button, a').forEach(el => {
-      const txt = (el.textContent || '').trim();
-      if (!targets.some(rx => rx.test(txt))) return;
-      if (el.tagName === 'A') {
-        if (!el.href || !el.href.startsWith('mailto:')) el.href = MAILTO;
-      } else {
-        const a = document.createElement('a');
-        a.href = MAILTO;
-        a.className = el.className;
-        a.innerHTML = el.innerHTML;
-        a.setAttribute('role','button');
-        el.replaceWith(a);
-      }
-    });
-  }
-
-  // 2) Universal mobile menu toggle (no framework assumptions)
-  function wireMobileMenu() {
-    // Try to find a toggle button and the nav/container it should open
-    const toggle =
-      document.querySelector('[data-menu-toggle], .menu-toggle, button[aria-label*="menu" i], [aria-controls*="nav" i]') ||
-      document.querySelector('header button, header .hamburger, header [role="button"]');
-
-    // Likely nav containers to open/close
-    const nav =
-      document.querySelector('[data-mobile-nav], nav[aria-label*="primary" i], nav[role="navigation"]') ||
-      document.querySelector('header nav, .mobile-nav, #nav, #menu');
-
-    if (!toggle || !nav) return false;
-
-    // Ensure a state attribute exists for CSS to hook into
-    nav.setAttribute('data-open', nav.getAttribute('data-open') || 'false');
-
-    // Click to toggle
-    const clickHandler = (e) => {
-      e.preventDefault();
-      const open = nav.getAttribute('data-open') === 'true';
-      nav.setAttribute('data-open', String(!open));
-      document.documentElement.classList.toggle('menu-open', !open);
-    };
-
-    // Avoid duplicate listeners on re-hydrate
-    toggle.removeEventListener('click', clickHandler);
-    toggle.addEventListener('click', clickHandler);
-
-    // Close when clicking a nav link (good UX)
-    nav.addEventListener('click', (e) => {
-      const a = e.target.closest('a');
-      if (!a) return;
-      nav.setAttribute('data-open','false');
-      document.documentElement.classList.remove('menu-open');
-    });
-
-    // Close on ESC
-    window.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        nav.setAttribute('data-open','false');
-        document.documentElement.classList.remove('menu-open');
-      }
-    });
-
-    return true;
-  }
-
-  function init() {
-    patchEmailButtons();
-    wireMobileMenu();
-  }
-
-  // SPA-safe: try a few times after load in case the bundle mounts late
-  window.addEventListener('load', () => {
-    let tries = 0;
-    const t = setInterval(() => {
-      init();
       if (++tries >= 20) clearInterval(t);
     }, 250);
   });
