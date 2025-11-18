@@ -95,8 +95,8 @@ Error generating stack: `+e.message+`
   R.jsx("h1",{
   className:"text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-8 drop-shadow-lg",
   style:{ 
-    fontFamily: "'Bangers', cursive",
-    color: "#FBBF24",           // this forces the bright yellow
+    fontFamily: "'Bangers', cursive !important",
+    color: "#FBBF24",
     textShadow: "3px 3px 0 rgba(0,0,0,0.3)"
   },
   children:"Oil Changes & More"
