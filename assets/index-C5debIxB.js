@@ -186,5 +186,5 @@ R.jsx("section",{id:"contact",className:"py-16 bg-blue-600 text-white",children:
 
   ]})
 }),
- R.jsx("footer",{className:"bg-gray-900 text-white py-8",children:R.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:R.jsxs("div",{className:"text-center",children:[R.jsx("img",{src:bf,alt:"J.B. Quik Oil Co.",className:"h-12 w-auto mx-auto mb-4 filter brightness-0 invert"}),R.jsx("p",{className:"text-gray-400 mb-2",children:"© 2025 J.B. Quik Oil Co. All rights reserved."}),R.jsx("p",{className:"text-gray-400",children:"New look, new name, same GREAT service since 1981!"})]})})})]})}D0.createRoot(document.getElementById("root")).render(R.jsx(Ml.StrictMode,{children:R.jsx(Gv,{})}));
+ R.jsx("footer",{className:"bg-gray-900 text-white py-8",children:R.jsx("div",{className:"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",children:R.jsxs("div",{className:"text-center",children:[R.jsx("img",{src:bf,alt:"J.B. Quik Oil Co.",className:"h-12 w-auto mx-auto mb-4 filter brightness-0 invert"}),R.jsx("p",{className:"text-gray-400 mb-2",children:"© 2026 J.B. Quik Oil Co. All rights reserved."}),R.jsx("p",{className:"text-gray-400",children:"New look, new name, same GREAT service since 1981!"})]})})})]})}D0.createRoot(document.getElementById("root")).render(R.jsx(Ml.StrictMode,{children:R.jsx(Gv,{})}));
  
