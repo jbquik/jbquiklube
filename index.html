@@ -134,12 +134,15 @@
                 <h2 class="text-2xl md:text-3xl font-semibold mb-4">Now Open</h2>
                 <p class="text-xl mb-6">New look, new name - Same GREAT service since 1981!</p>
                 
-                <a href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&amp;body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
-                   class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 text-lg rounded-md shadow-xs transition-colors" 
-                   role="button">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2 h-5 w-5" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path><rect x="2" y="4" width="20" height="16" rx="2"></rect></svg>
-                    Email Us With Your Questions
-                </a>
+                <a href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
+   class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 text-lg rounded-md shadow-xs transition-colors" 
+   role="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2 h-5 w-5" aria-hidden="true">
+      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+    </svg>
+    Email Us With Your Questions
+</a>
                 
                 <div class="mt-3 text-center">
                     <a href="tel:+17143778100" class="inline-flex items-center gap-2 text-lg font-semibold text-yellow-300 hover:text-yellow-200 transition-colors">
@@ -155,8 +158,10 @@
       <div class="text-center mb-12"><h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2><p class="text-xl text-gray-600">Quality service you can trust</p>
       </div>
         <div class="grid md:grid-cols-2 gap-8 mb-12">
-          <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
-            <div class="relative h-64"><img alt="Oil Changes" class="w-full h-full object-cover" src="/assets/JBQuik_oilchange-banner.webp">
+                    <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <!-- Oil Changes Card -->
+<a href="services.html#oil-changes" class="block">
+                        <div class="relative h-64"><img alt="Oil Changes" class="w-full h-full object-cover" src="/assets/JBQuik_oilchange-banner.webp">
               <div class="absolute inset-0 bg-blue-600/80 flex items-center justify-center">
                 <div class="text-center text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-car h-16 w-16 mx-auto mb-4" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg><h3 class="text-2xl font-bold">Oil Changes</h3>
                 </div>
@@ -166,7 +171,10 @@
             <div class="flex items-center text-gray-600 mb-2"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-5 w-5 mr-2" aria-hidden="true"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg><span>Drive up, stay in your car, and relax while we change your oil in about 15 minutes</span>
             </div>
           </div>
+          </a>
         </div>
+        <!-- Repair Services Card -->
+<a href="services.html#bring-your-own-oil" class="block">
       <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
         <div class="relative h-64"><img alt="Repair Services" class="w-full h-full object-cover" src="/assets/JBQuik-services.webp">
           <div class="absolute inset-0 bg-yellow-400/80 flex items-center justify-center">
@@ -177,6 +185,7 @@
       <div data-slot="card-content" class="p-6"><h4 class="text-xl font-semibold mb-3 text-yellow-600">Complete automotive care</h4><ul class="text-gray-600 space-y-1"><li>• Brakes</li><li>• Tire rotation</li><li>• Minor repairs and tune ups</li></ul>
       </div>
     </div>
+    </a>
   </div>
 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
   <div class="md:flex">
@@ -235,22 +244,21 @@
 
 <section id="contact" class="py-16 bg-blue-600 text-white">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-    <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch 
-    </h2>
-    <p class="text-xl mb-6 opacity-90">Have questions about our services? We’d love to hear from you!
-    </p>
+    <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
+    <p class="text-xl mb-6 opacity-90">Have questions about our services? We'd love to hear from you!</p>
     <div class="mb-6">
-      <a href="tel:+17143778100" class="block text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-100 transition-colors">Call Us – (714) 377-8100
-      </a>
+      <a href="tel:+17143778100" class="block text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-100 transition-colors">Call Us — (714) 377-8100</a>
     </div>
-    <a href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&amp;body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" data-slot="button" class="inline-flex items-center justify-center gap-2 whitespace-nowrap transition-all disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg:not([class*='size-'])]:size-4 shrink-0 [&amp;_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive h-9 has-[&gt;svg]:px-3 bg-yellow-400 hover:bg-yellow-500 text-black font-bold text-lg px-10 py-4 rounded-lg shadow-lg"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-3 h-6 w-6" aria-hidden="true">
-      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7">
-      </path>
-      <rect x="2" y="4" width="20" height="16" rx="2">
-      </rect>
-    </svg>Contact Us
-   </a>
- </div>
+    <a href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
+   class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 text-lg rounded-md shadow-xs transition-colors" 
+   role="button">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2 h-5 w-5" aria-hidden="true">
+      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+    </svg>
+    Email Us With Your Questions
+</a>
+  </div>
 </section>
 
 </main>
