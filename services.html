@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | J.B. Quik Oil Co.</title>
+    
+    <link rel="stylesheet" href="assets/index-C_QGHLpW.css"> 
+    
+    <style>
+        .hero-background-blue {
+            background-color: #0077c2; 
+        }
+
+        @media (max-width: 767px) {
+            #mobile-nav {
+                display: none !important;
+            }
+            #menu-toggle:checked ~ #mobile-nav {
+                display: flex !important;
+            }
+        }
+
+        .amp {
+          font-family: 'Mokita', Georgia, serif !important;
+          font-weight: normal !important;
+          font-size: 1.5rem; /* Makes it 25% larger than default */
+        }
+        
+        
+        @media (min-width: 768px) {
+            label[for="menu-toggle"] {
+                display: none !important;
+            }
+            #mobile-nav {
+                display: flex !important;
+                flex-direction: row !important;
+                position: static !important;
+                width: auto !important;
+                padding: 0 !important;
+                box-shadow: none !important;
+            }
+            #mobile-nav > a {
+                margin-left: 1.5rem !important;
+                margin-right: 0 !important;
+            }
+            #mobile-nav > a:first-child {
+                margin-left: 0 !important;
+            }
+        }
+
+        /* Card styles to echo homepage tiles */
+        .service-card {
+          border-radius: 0.75rem;
+          padding: 1.75rem;
+          box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+          color: #ffffff;
+        }
+        .service-card-blue {
+          background: #0b63e6; /* homepage blue */
+        }
+        .service-card-yellow {
+          background: #f3b019; /* homepage yellow */
+        }
+        .service-card h3,
+        .service-card h4 {
+          font-weight: 700;
+        }
+        .service-card p,
+        .service-card li {
+          color: #f9fafb;
+        }
+
+        .service-card-transparent {
+         color: #000000;
+        }
+
+        .service-card-transparent p,
+        .service-card-transparent li {
+         color: #000000 !important;
+         font-weight: normal !important;
+        }
+        .service-card-transparent h3,
+        .service-card-transparent h4 {
+         color: #2563eb !important;
+        }
+    </style>
+  </head>
+  
+  <body>
+
+<header class="bg-white shadow-md p-4 sticky top-0 z-20"> 
+  <div class="max-w-7xl mx-auto flex justify-between items-center relative">
+    
+    <a href="index.html">
+        <img src="/assets/JBQuik_title.png" alt="J.B. Quik Oil Co. Logo" class="h-16 w-auto" />
+    </a>
+    
+    <input type="checkbox" id="menu-toggle" class="hidden">
+    
+    <label for="menu-toggle" class="text-gray-700 hover:text-red-600 cursor-pointer">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+      </svg>
+    </label>
+    
+    <nav id="mobile-nav" class="
+      flex flex-col space-y-2 absolute top-full right-0 w-full xs:w-64 bg-white shadow-lg p-4 z-10 
+      md:space-x-8
+    ">
+      <a href="index.html" class="block text-gray-700 font-medium hover:text-red-600 transition-colors py-2 md:py-0">Home</a>
+      <a href="services.html" class="block text-red-600 font-bold py-2 md:py-0">Services</a>
+      <a href="index.html#about" class="block text-gray-700 font-medium hover:text-red-600 transition-colors py-2 md:py-0">About Us</a>
+      <a href="index.html#contact" class="block text-gray-700 font-medium hover:text-red-600 transition-colors py-2 md:py-0">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <!-- Hero -->
+  <section id="home" class="relative bg-gradient-to-br from-blue-600 to-blue-800 text-white">
+      <div class="absolute inset-0 bg-black opacity-20"></div>
+      <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+          <div class="mb-8">
+              <img alt="J.B. Quik Oil Co." class="h-32 w-auto mx-auto mb-6" src="/assets/JBQuik_title.png">
+          </div>
+          <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold text-yellow-400 mb-8 drop-shadow-lg">
+              <span style="-webkit-font-smoothing: antialiased; color: rgb(251, 191, 36); text-shadow: rgba(0, 0, 0, 0.4) 4px 4px 0px;">Oil Changes &amp; More</span>
+          </h1> 
+      </div>
+  </section>
+
+  <!-- Services content on neutral background -->
+<section id="services" class="py-16 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12"><h2 class="text-4xl font-bold text-gray-900 mb-4">Our Services</h2><p class="text-xl text-gray-600">Quality service you can trust</p>
+      </div>
+        <div class="grid md:grid-cols-1 gap-8 mb-12">
+          <div data-slot="card" class="bg-card text-card-foreground flex flex-col gap-6 rounded-xl border py-6 overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+            <div class="relative h-64"><img alt="Oil Changes" class="w-full h-full object-cover" src="/assets/JBQuik_oilchange-banner.webp">
+              <div class="absolute inset-0 bg-blue-600/80 flex items-center justify-center">
+                <div class="text-center text-white"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-car h-16 w-16 mx-auto mb-4" aria-hidden="true"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"></path><circle cx="7" cy="17" r="2"></circle><path d="M9 17h6"></path><circle cx="17" cy="17" r="2"></circle></svg><h3 class="text-2xl font-bold">Oil Changes</h3>
+                </div>
+              </div>
+            </div>
+          <div data-slot="card-content" class="p-6">
+  <h4 class="text-xl font-semibold mb-3 text-blue-600">We have every kind of oil for every kind of car</h4>
+
+  <div class="flex items-start text-gray-600 mb-4">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-5 w-5 mr-2 shrink-0" aria-hidden="true">
+      <circle cx="12" cy="12" r="10"></circle>
+      <polyline points="12 6 12 12 16 14"></polyline>
+    </svg>
+    <span>Drive up, stay in your car, and relax while we change your oil in about 15 minutes</span>
+  </div> 
+  <ul class="text-gray-800 space-y-1 list-disc list-inside ml-7">
+    <li>Up to 5 qts of oil and a quality filter</li>
+    <li>Fluid level checks and top‑offs</li>
+    <li>Tire pressure check included with every visit</li>
+  </ul>
+
+</div>
+        </div>
+
+
+
+      </article>
+
+    </div>
+  </div>
+        
+  
+  <h2 class="text-3xl font-bold text-center text-red-600 mb-4">
+        Our Comprehensive Service List
+      </h2>
+      <p class="text-center text-gray-700 max-w-2xl mx-auto mb-10">
+        Every visit starts with your vehicle info pulled from our professional automotive database so we can confirm the <i>exact</i> oil and filter your manufacturer recommends before any work begins.
+      </p>
+
+      <!-- Signature Oil Change - Blue (text left, image right) -->
+      <div class="grid md:grid-cols-2 gap-0 mb-8 overflow-hidden rounded-xl shadow-lg">
+        <div class="service-card service-card-blue mb-0 flex flex-col justify-center min-h-[400px]">
+          <h3 class="text-2xl mb-3">Signature Oil Change</h3>
+          <p class="mb-3">
+            Includes up to 5 qts of oil, a standard spin‑on oil filter, and a reset of your engine oil indicator light.
+          </p>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Windshield washer fluid check and top‑off</li>
+            <li>Coolant, power steering, and brake fluid check with top‑off when needed</li>
+            <li>Tire pressure check and air added as needed</li>
+          </ul>
+          <p class="font-semibold mt-3">
+            Typical range: starting around $60 for many older or high‑mileage cars that use 5 qts and a regular filter.
+          </p>
+        </div>
+        <div class="bg-blue-700 flex items-center justify-center min-h-[400px]">
+          <img src="/assets/signature-oil-change.png" alt="Motor Oil Pouring" class="w-full h-full object-cover">
+        </div>
+      </div>
+
+      <!-- Conventional & Synthetic - Yellow (image left, text right) -->
+      <div class="grid md:grid-cols-2 gap-0 mb-8 overflow-hidden rounded-xl shadow-lg">
+        <div class="bg-yellow-500 flex items-center justify-center min-h-[400px]">
+          <img src="/assets/Mobil1.png" alt="Mobil Oil Options" class="w-full h-full object-cover">
+        </div>
+        <div class="service-card service-card-yellow mb-0 flex flex-col justify-center min-h-[400px]">
+          <h3 class="text-2xl mb-3">Conventional <span class="amp">&amp;</span> Synthetic Options</h3>
+          <p class="mb-3">
+            Choose from quality conventional oils or full synthetics featuring Mobil products to match your driving style and manufacturer specs.
+          </p>
+          <p class="mb-3">
+            Most service packages fall between <span class="font-semibold">$59.99‑$125.99</span> plus tax, depending on oil grade and vehicle requirements.
+          </p>
+        </div>
+      </div>
+
+
+      <!-- Bring Your Own Oil - Blue (text left, details right, ONE cohesive section) -->
+      <div class="grid md:grid-cols-2 gap-0 mb-8 overflow-hidden rounded-xl shadow-lg relative min-h-[400px]">
+        <!-- Parallax background image with low opacity -->
+        <div class="absolute inset-0 -z-10" style="background-image: url('/assets/BYOO.png'); background-attachment: fixed; background-position: center; background-size: cover; opacity: 0.2;"></div>
+        
+        <div class="service-card service-card-transparent mb-0 border-r-2 border-blue-800 relative z-10 flex flex-col justify-center p-8">
+          <h3 class="text-2xl font-bold mb-3 drop-shadow-md">Bring Your Own Oil <span class="amp">&amp;</span> Filter</h3>
+          <p class="mb-3 font-bold drop-shadow-md">
+            Love a specific oil brand for your car? Bring your own oil and filter, and we will verify compatibility with your vehicle before we get started.
+          </p>
+          <p class="font-bold drop-shadow-md">
+            For a nominal service fee of <span class="font-semibold">$50</span>, we perform the same careful drain, filter change, and oil fill using the products you provide.
+          </p>
+        </div>
+        <div class="service-card service-card-transparent mb-0 relative z-10 flex flex-col justify-center p-8">
+          <h4 class="text-xl font-bold mb-3 drop-shadow-md">What We Verify First</h4>
+          <ul class="list-disc list-inside space-y-2 font-bold drop-shadow-md">
+            <li>Viscosity and rating match your manufacturer specs</li>
+            <li>Filter style and fit for your engine</li>
+            <li>Quantity is sufficient for a complete service</li>
+          </ul>
+        </div>
+      </div>
+
+
+
+      <!-- No Pressure Philosophy - White STANDOUT -->
+      <div class="bg-white rounded-xl shadow-2xl border-2 border-gray-200 p-8 mb-8">
+        <h3 class="text-3xl mb-4 text-center text-gray-900 font-bold">Straightforward Service. No Pressure.</h3>
+        <p class="mb-4 text-center text-gray-700 text-lg">
+          When you come in for an oil change, you get an oil change – not a sales pitch. Our service package already includes the core maintenance checks most shops try to upsell.
+        </p>
+        <p class="text-center text-gray-700 text-lg">
+          If our technicians spot something urgent, they will let you know and explain it clearly. If you want us to look at anything specific, just ask and the team will be happy to help.
+        </p>
+      </div>
+
+      <!-- Specialty Vehicles - Gradient Blue (image left, text right) -->
+      <div class="grid md:grid-cols-2 gap-0 mb-12 overflow-hidden rounded-xl shadow-lg">
+        <div class="bg-blue-700 flex items-center justify-center min-h-[400px]">
+          <img src="/assets/specialty-vehicle.png" alt="High Performance Vehicle" class="w-full h-full object-cover">
+        </div>
+        <div class="service-card mb-0 flex flex-col justify-center min-h-[400px]" style="background: linear-gradient(to bottom right, #0077c2, #155dfc);">
+          <h3 class="text-2xl mb-3 text-white">Specialty <span class="amp">&amp;</span> High‑Capacity Vehicles</h3>
+          <p class="mb-3 text-gray-50">
+            Some vehicles need more oil or special canister‑style filters, which adds to the total service cost.
+          </p>
+          <ul class="list-disc list-inside space-y-1 text-gray-50">
+            <li>High‑performance cars that use up to 10 qts of Mobil 1 full synthetic</li>
+            <li>Diesel cars and trucks that can require 15 qts and specific filters</li>
+            <li>Specialty oils like Amsoil, Royal Purple, Ravenol available by request</li>
+          </ul>
+          <p class="font-semibold mt-3 text-white">
+            Individual quarts and specialty filters are priced separately and will be reviewed with you before authorization.
+          </p>
+        </div>
+      </div>
+
+      <!-- Additional Services Section -->
+      <div class="border-t-4 border-red-600 pt-10">
+        <h3 class="text-3xl font-bold text-center text-red-600 mb-6">
+          Additional Repair <span class="amp">&amp;</span> Maintenance Services
+        </h3>
+        <p class="text-gray-700 text-center max-w-2xl mx-auto mb-10">
+          Beyond routine oil changes, we offer a range of light repair and maintenance services to help keep your vehicle running smoothly and safely.
+        </p>
+
+        <!-- Full-width service cards -->
+        <div class="space-y-6">
+          <div class="service-card service-card-blue">
+            <h4 class="text-2xl mb-3">Brake <span class="amp">&amp;</span> Tire Services</h4>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+              <li>Brake inspections and repair</li>
+              <li>Tire rotation</li>
+              <li>Tire pressure checks</li>
+            </ul>
+          </div>
+          
+          <div class="service-card service-card-yellow">
+            <h4 class="text-2xl mb-3">Fluids <span class="amp">&amp;</span> Filters</h4>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+              <li>Automatic transmission fluid service</li>
+              <li>Diesel oil service</li>
+              <li>Fuel filter replacement</li>
+              <li>Engine air and cabin air filters</li>
+            </ul>
+          </div>
+          
+          <div class="service-card service-card-blue">
+            <h4 class="text-2xl mb-3">General Maintenance</h4>
+            <ul class="list-disc list-inside space-y-2 text-lg">
+              <li>Belts and minor parts replacement</li>
+              <li>Tune‑ups and general drivability checks</li>
+              <li>Check engine light diagnostics</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+    
+<footer class="bg-gray-900 text-white py-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <img alt="J.B. Quik Oil Co." class="h-12 w-auto mx-auto mb-4 filter brightness-0 invert" src="/assets/JBQuik_title.png">
+      <p class="text-gray-400 mb-2">© 2026 J.B. Quik Oil Co. All rights reserved.</p>
+      <p class="text-gray-400">New look, new name, same GREAT service since 1980!</p>
+    </div>
+  </div>
+</footer>
+
+  </body>
+</html>
