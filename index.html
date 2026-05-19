@@ -84,10 +84,41 @@
 #visit-card-wrap h3{ font-size:1.75rem !important; } /* ~24px on md+ */}
     </style>
     <!-- Google tag (gtag.js) --> 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097046278">
-          </script> 
-    <script> window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'AW-18097046278'); 
-    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18097046278"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18097046278');
+
+  // 1. Email Click Tracking Function
+  function gtag_report_email_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18097046278/eGMuCKqVv6wcEIaGrLVD',
+        'event_callback': callback
+    });
+    return false;
+  }
+
+  // 2. Phone Click Tracking Function
+  function gtag_report_phone_conversion(url) {
+    var callback = function () {
+      if (typeof(url) != 'undefined') {
+        window.location = url;
+      }
+    };
+    gtag('event', 'conversion', {
+        'send_to': 'AW-18097046278/Q0CtCPSn2awcEIaGrLVD',
+        'event_callback': callback
+    });
+    return false;
+  }
+</script>
   </head>
   
   <body>
@@ -139,20 +170,24 @@
                 <h2 class="text-2xl md:text-3xl font-semibold mb-4">Now Open</h2>
                 <p class="text-xl mb-6">New look, new name - Same GREAT service since 1981!</p>
                 
-                <a href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
+                <a onclick="return gtag_report_email_conversion('mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&amp;body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A');" 
+   href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&amp;body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
    class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 text-lg rounded-md shadow-xs transition-colors" 
    role="button">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2 h-5 w-5" aria-hidden="true">
-      <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
-      <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+        <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
+        <rect x="2" y="4" width="20" height="16" rx="2"></rect>
     </svg>
     Email Us With Your Questions
 </a>
                 
-                <div class="mt-3 text-center">
-                    <a href="tel:+17143778100" class="inline-flex items-center gap-2 text-lg font-semibold text-yellow-300 hover:text-yellow-200 transition-colors">
-                        Call us – (714) 377-8100
-                    </a>
+<div class="mt-3 text-center">
+    <a onclick="return gtag_report_phone_conversion('tel:+17143778100');" 
+       href="tel:+17143778100" 
+       class="inline-flex items-center gap-2 text-lg font-semibold text-yellow-300 hover:text-yellow-200 transition-colors">
+        Call us – (714) 377-8100
+    </a>
+</div>
                 </div>
             </div>
         </div>
@@ -252,11 +287,12 @@
     <h2 class="text-4xl md:text-5xl font-bold mb-6">Get In Touch</h2>
     <p class="text-xl mb-6 opacity-90">Have questions about our services? We'd love to hear from you!</p>
     <div class="mb-6">
-      <a href="tel:+17143778100" class="block text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-100 transition-colors">Call Us — (714) 377-8100</a>
+      <a onclick="return gtag_report_phone_conversion('tel:+17143778100');" href="tel:+17143778100" class="block text-3xl md:text-4xl font-bold text-yellow-300 hover:text-yellow-100 transition-colors">Call Us — (714) 377-8100</a>
     </div>
-    <a href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
-   class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 text-lg rounded-md shadow-xs transition-colors" 
-   role="button">
+    <a onclick="return gtag_report_email_conversion('mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&amp;body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A');" 
+       href="mailto:jack@jbquiklube.com?subject=Service%20Request%20from%20Website&amp;body=Name:%0APhone:%0AVehicle:%0ARequested%20Service:%0APreferred%20Date/Time:%0A" 
+       class="inline-flex items-center justify-center bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-8 py-3 text-lg rounded-md shadow-xs transition-colors" 
+       role="button">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail mr-2 h-5 w-5" aria-hidden="true">
       <path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7"></path>
       <rect x="2" y="4" width="20" height="16" rx="2"></rect>
